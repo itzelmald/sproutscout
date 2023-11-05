@@ -11,12 +11,12 @@ As global food scarcity and rising food prices creep upon us, plant monitoring h
 
 ## 3.1 Process Model Specification
 
-## Process Specification
+### Process Specification
 This system will address the problem of whether it is possible to create an energy efficient system that allows users to care for their plants remotely through an app. This is defined through the use of multiple ESP32 devices that can be deployed as nodes to monitor and manage the health of plants in a household. However, this system’s scope can be extended to a larger network of nodes that interface over a farm. The plant will be managed through the use of actuators such as lights and a watering system in response to specific plant conditions. The app will be able to gather plant health metrics information using light, temperature, humidity, and moisture levels collected from the respective sensors. 
 
-## Information Model Specification
+### Information Model Specification
 
-#### Figure 1: Entity Relations
+**Figure 1: Entity Relations**
 As shown in the diagram, the main virtual entities will be each separate plant. The plant entity contains the temperature, soil moisture, and light level attributes. All plant entities share a common attribute of the current weather as every plant will be in the same garden module. Each plant entity will also have its own water pump and lamp. The water pump and lamp entity have the same “state” attribute, defining whether the entity is powered or not. 
 
 ### Service Specification
@@ -25,7 +25,7 @@ The backend service we will be utilizing is Supabase. Supabase supports deployin
 ### IOT Level Specification
 The two devices will engage in a server-client process to facilitate this process, with the receiver acting as the client to gather and collect data that will then be sent to the server, which will then send the collected information from our sensors over to the API. With a bidirectional flow of communication, the project API will be able to collect and store the data in a cloud environment with a database that communicates with the app, relay and receive information from the user.
 
-#### Figure 2: Deployment Levels
+**Figure 2: Deployment Levels**
 
 ### Functional View Specification
 In this system, the two ESP32 IoT devices, along with actuators and sensors that we use to gather and collect information on the plant health metrics. These would be associated and mapped into the device and management functional groups. In the services functional group, would be the web services and REST services. In the communication management groups would be the HTTP requests and APIs we use to gather information from the devices. The application functional group would include the actual application along with the database server. Lastly, the application management and database management would go into the management functional group.
@@ -38,13 +38,13 @@ The service provided by this system is the enablement of the user to receive inf
 ### Device and Component Integration
 Once the specification for the IoT system has been met the prototype should be integrated in manner as represented by the TinkerCad 3D model as shown below in Figures 3, 4, and 5. 
 
-#### Figure 3: Device and Component Integration
+**Figure 3: Device and Component Integration**
 
 
-#### Figure 4: Pins used in the setup
+**Figure 4: Pins used in the setup**
 
 
-#### Figure 5: Side view of the setup
+**Figure 5: Side view of the setup**
 
 
 ### Application Development
@@ -54,22 +54,22 @@ The companion mobile application will be developed in JavaScript, utilizing the 
 
 The mobile app will show users a ‘Dashboard’ view containing cards of all of the plants registered to their account. Users will be able to press on any of these cards to get an in-depth view of all the health metrics that sensors have captured about the plant’s current condition. They will also be able to manage properties about that plant, such as its display name.
 
-### 3.2 Measurements and Metrics for Testing
+## 3.2 Measurements and Metrics for Testing
 As the development of the IoT system proceeds we will perform a series of iterative testing methods on the prototype to ensure that it meets the defined objectives and requirements. This will look like performing a series of functional tests to ensure that our devices are connecting and deploying information to our database in a succinct manner, unit testing on our backend and frontend development integrations.
 
 We will observe and collect data on changes in power consumption as a way of measuring the energy efficiency of IoT devices and optimize for extended battery life. We will also measure the end to end latency in how much time (in milliseconds) information takes to travel from different nodes in our system, along with latency due to data processing. Through this iterative process changes will be made to make necessary adjustments as needed and implement error handling.  
 
-### 3.3 Plan for Evaluating Performance and Demoing 
+## 3.3 Plan for Evaluating Performance and Demoing
 As we build the different components of the system, we will be testing each component separately before integrating all units together. These different components include the sensor data collection, irrigation system, lighting system, networking, application interface, and the various application features. We will be using two plants to test our system. To evaluate performance we will assess rates of failure and uptime, or percentage of time the system is operational, and how well power consumption is managed. We will also measure performance metrics such as latency between the server and the device, as well as execution time for the API endpoints.
 
 To demonstrate how our system works we will show how the information is displayed in the app to the user and an example of how they can manage their plants remotely through one of the parameters, such as by setting the state of one of the actuators. 
 
-### 3.4 Target User and Scenario
+## 3.4 Target User and Scenario
 Our project is aimed towards small scale or household gardens. Since other works have focused on large-farm based plant monitoring systems, we hope to provide a solution for small scale farmers that is accessible, sustainable and cost-effective. Users will be able to remotely monitor plant moisture, light, and temperature levels from their smartphone, which will display and send notifications in real-time regarding the plant health. Users will also have the ability to control certain thresholds at which the plants will automatically be watered or be provided with a light source. In addition, the system will implement a sleep-cycle based on real-time weather data to save energy. 
 
 Users can step away from their garden for long periods of time without having to worry about the health and care of their plants. Since important plant-health properties will be monitored in real-time, the users can make more informed decisions on the care of their plants, removing some of the uncertainty regarding plant health. 
 
-### 3.5 Privacy and Security Considerations
+## 3.5 Privacy and Security Considerations
 
 Supabase, our backend-as-a-service platform of choice, has a built-in secure authentication service that we plan to use to secure user data within our app. We plan to implement standard username/password credential sign-in, and eventually secure accounts even further with two-factor authentication and Single Sign-On (SSO) through social providers. Our IoT devices will communicate with our database through Edge functions, which will be secured through API access tokens to ensure that all requests are authentic. We will not transmit identifiable user data to any third-party, including for advertising or analytics purposes, to protect user privacy. We will, however, have to store location data about where plants are to enable functionality related to the surrounding climate and weather conditions.
 
