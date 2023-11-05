@@ -18,7 +18,6 @@ const int serverPort = 80;  // Port number to connect*/
 // Put your supabase URL and Anon key here...
 // Because Login already implemented, there's no need to use secretrole key
 String supabase_url = "https://xzissfgunvpzgocavmvi.supabase.co";
-String anon_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6aXNzZmd1bnZwemdvY2F2bXZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTkwMzY5MjYsImV4cCI6MjAxNDYxMjkyNn0.yimNI3OEgNYs5dvwwcdO4Lr41yGEj-FE1c-tzofI4AM";
 
 // Put Supabase account credentials here
 const String email = "hello@sproutscouts.com";
